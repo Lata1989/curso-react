@@ -1,22 +1,28 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
+import './ComponenteContador.css';
 
-export const ComponenteContador = () => {
-    const [valor, setValor] = useState(0);
+export const ComponenteContador = ({valor}) => {
+    const [contador, setContador] = useState(valor);
 
     return (
         <>
             <h1>Contador en React + Vite:</h1>
-            <p>{valor}</p>
+            <p>{contador}</p>
             <button onClick={incrementar}>Incrementar</button>
             <button onClick={decrementar}>Decrementar</button>
         </>
     );
 
     function incrementar() {
-        setValor(valor + 1);
+        setContador(contador + 1);
     }
 
     function decrementar() {
-        setValor(valor - 1);
+        setContador(contador - 1);
     }
+}
+
+ComponenteContador.propTypes = {
+    valor: PropTypes.number
 }
