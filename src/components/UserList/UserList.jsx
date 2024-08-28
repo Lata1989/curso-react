@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useFetchData } from "../../hooks/useFetchData";
 import PropTypes from 'prop-types';
 
 export const UserList = ({ endPoint }) => {
 
+    // Se reemplaza en el customHook
+    /*
     const [data, setData] = useState([]);
 
     const fetchData = async () => {
@@ -17,12 +19,17 @@ export const UserList = ({ endPoint }) => {
     };
 
     useEffect( () => {fetchData()}, [endPoint])
+    */
+
+
+    // customHooks
+    const {data, isLoading} = useFetchData({endPoint});
 
     return (
         <>
             <ul>
                 {/* {users.map(user => <li key={user.id}>Nombre: {user.name} - Usuario: {user.username}</li>)} */}
-                {endPoint == 'users' ? data.map(item => <li key={item.id}>{item.name}</li>) :
+                {isLoading ? <p>Cargando...</p> : endPoint == 'users' ? data.map(item => <li key={item.id}>{item.name}</li>) :
                     data.map(item => <li key={item.id}>{item.body}</li>)}
             </ul>
         </>
