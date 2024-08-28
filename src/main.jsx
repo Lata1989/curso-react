@@ -4,6 +4,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 // import { ComponenteContador } from './components/ComponenteContador/ComponenteContador'
 import { TiempoCursoComponent } from './components/TiempoCursoComponent/TiempoCursoComponent'
+import { UsersApp } from './components/UsersApp/UsersApp'
+// import { ListadoApp } from './components/ListadoApp/ListadoApp'
 
 // Mis componentes
 // import { PrimerComponente } from './components/PrimerComponente/PrimerComponete'
@@ -19,5 +21,7 @@ createRoot(document.getElementById('root')).render(
     <Variables /> */}
     {/* <PropComponent titulo="Titulo desde el main.jsx" subtitulo="Suck this tangerine" numero={4}/> */}
     {/* <ComponenteContador valor={0}/> */}
+    {/* <ListadoApp /> */}
+    <UsersApp />
   </StrictMode>,
 )
